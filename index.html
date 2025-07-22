@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amadeco Open Source Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="INDEX, FOLLOW">
 
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #fff;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .project-grid {
+      padding: 2rem 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .card-title a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    .card-title a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="logo-container">
+        <img alt="Amadeco (logo)" title="Amadeco" width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI5Mi40IiB2aWV3Qm94PSIwIDAgNDAwIE5hTiI+PHBhdGggZD0iTTk3Ljg2MyAxMC42NDJsLTcuMjcxIDcuMDUtMTMuNTUgMTMuMUw2NyA0MC40ODR2MjIuNDU4bC4xNSAyMi40NTJjLjA4My0uMDAzIDQuMzA5LTYuMjM1IDkuMzkxLTEzLjg1bDEyLjMtMTguMzkzIDMuMDU5LTQuNTQ4LjA1MSAxNC41OTguMjEzIDE0LjU5OWMuMjExIDAgOC44MDItNy4wMTkgMjAuOTc3LTE3LjEzNyAxLjIzMy0xLjAyNSAyLjI3Ny0xLjg2MyAyLjMyMS0xLjg2My4wNzMgMC0xLjE0NSA0LjkwNi00Ljc0MyAxOS4xMDdsLTEuMzE5IDUuNTVjMCAuMzIuODE1LjM0MyAxMi40LjM0M2gxMi40bC0uMDA1LTIxLjk1LS4wMDYtMjEuOTUtNC4xMjQtNC4yLTExLjQ0NS0xMS42MDEtMTIuMTAzLTEyLjI1TDEwMS42OCA3Yy0uMDMgMC0xLjc0NyAxLjYzOS0zLjgxNyAzLjY0Mm0xMy43NDkgMTQuNDA4bDEzLjM1MiAxMy41NzIgMy40NCAzLjUyMy4wNDggMTguMDI3LjA0OCAxOC4wMjhoLTUuOTVjLTMuMjcyIDAtNS45NS0uMDczLTUuOTUtLjE2MXMuNTkxLTIuNDk2IDEuMzE0LTUuMzVsNy4xOTMtMjkuMDQ4Yy0uMDk2LS4wOTctMi4zNTIgMS43MzgtMTYuMjA3IDEzLjE4M2wtNS4yMTcgNC4yOS0zLjMgMi42OTRjLTEuMTQ2Ljk0LTIuMjEgMS43ODctMi4zNjYgMS44ODItLjI2LjE2MS0uMTc1LTI5LjcyOS4wOTktMzQuNjU0LjEyNS0yLjI0NiAxLjI2My0zLjgyOS0xOC43ODQgMjYuMTIxTDcyLjYgNjcuMjE0VjU1LjAzMSA0Mi44NDhsMS4wNS0uOTUyYzEuMjk0LTEuMTc0IDExLjg3MS0xMS40MDEgMjEuNTUtMjAuODM3IDMuNjQxLTMuNTQ5IDYuMjc4LTYuMDQzIDYuNDAxLTYuMDUyLjA1NS0uMDA0IDQuNTYgNC41MTYgMTAuMDExIDEwLjA0M20xOTYuNDk3IDEwLjQ2MmMtOS43ODEgMS44MzUtMTcuMTQyIDkuMjc2LTE5LjAyNyAxOS4yMzQtLjQwNyAyLjE1NS0uNDY1IDcuNjM2LS4wOTcgOS4yNTQgMi40NjIgMTAuODE4IDkuNTE4IDE3LjU4OCAyMC4yNDkgMTkuNDI1IDkuNjgzIDEuNjU5IDE4LjUwNS0yLjE2NyAyNC4xMi0xMC40NiAxLjg1OS0yLjc0NSAxLjk0Ni0yLjU2NS0xLjIzNi0yLjU2NWgtMi42ODJsLS41MzQuNjVjLTQuOTEyIDUuOTktOS40OTUgOC4xNTgtMTYuNzAyIDcuOS0xNS4zNzItLjU0OS0yMy44MTktMTguNjI0LTE0LjctMzEuNDU1IDcuMjg5LTEwLjI1NyAyMy44MTctMTAuNDE2IDMwLjkxNS0uMjk3bC44NDMgMS4yMDJoMi42OTRjMy4xNTcgMCAzLjA1MS4xNjggMS41MjEtMi40MDYtMy4wOTEtNS4yLTguMDg0LTguNzMyLTE0LjU3My0xMC4zMDktMS45NzYtLjQ4LTguNTg5LS41ODYtMTAuNzkxLS4xNzNtNTUuODkxLjAwMWMtMTYuMDEgMy40NTgtMjQuNTE3IDE5Ljg4MS0xNy43MDggMzQuMTg3IDYuNTIyIDEzLjcwNSAyNC4zNjYgMTguMzQgMzYuNzA4IDkuNTM2IDUuNjEyLTQuMDAzIDguNjI4LTguODY4IDEwLjQwOC0xNi43ODkuNzcyLTMuNDM1LS40NzYtOS45OTQtMi42OTctMTQuMTc3LTUuMDAxLTkuNDE2LTE2LjU3OS0xNC45NDYtMjYuNzExLTEyLjc1N20tMzM3Ljc0MS40NDNjLS4xMzMuMDg2LS40NzcuNjk0LS43NjYgMS4zNWwtLjcwNSAxLjU5NGMtLjA5OS4yMi0xLjg5NCA0LjQwNS0zLjk4OSA5LjNMMTYuOCA1Ny41Yy0uMTAzLjIyLS45MTYgMi4xMS0xLjgwNiA0LjJsLTIuOTkzIDctNS44NzcgMTQuMDkxYy4wNi4wNiAxLjIxMS4xNCAyLjU1OC4xNzlsMi40NDkuMDY5LjU0NS0xLjI2OS43NTctMS43NyAyLjg1Mi02LjYgMi42NC02LjFoMTAuODQzIDEwLjg0M2wxLjEwNiAyLjYgMS4zOCAzLjJjLjE1MS4zMy43ODUgMS44MTUgMS40MDggMy4zbDEuNDk2IDMuNS44NzcgMS45NjYuNTE0IDEuMTY3IDIuNDg4LS4wNjdjMS4zNjgtLjAzNiAyLjU0NS0uMTI0IDIuNjE1LS4xOTRzLTEuMTAyLTIuOTk2LTIuNjA3LTYuNUw0NS4xMDYgNjcuNWwtMS40MDgtMy4zLTEuNTMyLTMuNTY1Yy0uMjE0LS40NzUtMS41ODktMy42Ny0zLjA1Ni03LjFMMzQuNDEyIDQyLjZsLTIuMzMxLTUuNGMtLjU4Ni0xLjM2OC0uNDItMS4yOTYtMy4xMDItMS4zNS0xLjM2NC0uMDI4LTIuNTg3LjAyLTIuNzIuMTA2bTEzNy43MTEtLjAyMmMtLjE5Ny4wNTItLjY3LjkwOS0xLjE3NSAyLjEyN2wtMS4zMDEgMy4wMzljLS4yNS41NS0zLjg0MyA4LjkyLTcuOTg1IDE4LjZsLTcuNzk5IDE4LjJhMTg0LjggMTg0LjggMCAwIDAtMS4wMjEgMi40Yy0uNDE0Ljk5LS44MjkgMS44ODUtLjkyMSAxLjk5LS41MTQuNTgyLjc4LjgwNSAzLjMyNC41NzNsMS43OTItLjE2MyAyLjM1My01LjQgMi41NTEtNS45YTExNy44NSAxMTcuODUgMCAwIDEgLjk5LTIuM2wuNzktMS44aDEwLjgyOSAxMC44MjlsLjYwMyAxLjQuODY4IDIgNC41OTUgMTAuNy42MjQgMS41IDIuNjY1LjA1NiAyLjY2NS4wNTYtLjEyNi0uNTA1Yy0uMS0uMzk3LTIuODI3LTYuODI4LTQuNDE0LTEwLjQwN2wtMi45OTUtNy0zLjAwMi03Yy0uMTQ5LS4zMy0xLjg5NC00LjM4LTMuODc5LTktNS42MTEtMTMuMDY0LTUuNTctMTIuOTcyLTUuOTY0LTEzLjEyOHMtNC4zNDQtLjE4NS00Ljg5Ni0uMDM4TTE5OS42IDU5LjRWODNsNi4wNS0uMDA3YzE3LjQzNC0uMDIxIDI0LjAwNi0yLjE1MiAyOS41NjctOS41ODcgNC43NTQtNi4zNTQgNS40MDItMTcuNjUzIDEuNDUyLTI1LjMwNi0zLjIwMi02LjIwNC05LjAzNS0xMC4yNjMtMTYuNjY5LTExLjYtMi4xNjMtLjM3OS04Ljg4My0uNjczLTE1Ljc1LS42ODlsLTQuNjUtLjAxMXYyMy42bTUyLjItLjAwMVY4M2gxMi45IDEyLjl2LTIuMy0yLjNoLTEwLjUtMTAuNXYtOC41LTguNWgxMC4yMjMgMTAuMjI0bC0uMTIxLS40NWMtLjA2Ni0uMjQ3LS4xMjItMS4yODMtLjEyMy0yLjNsLS4wMDMtMS44NWgtMTAuMS0xMC4xdi04LjItOC4yaDEwLjUwNyAxMC41MDZsLS4wNTYtMi4yNS0uMDU3LTIuMjUtMTIuODUtLjA1MS0xMi44NS0uMDUydjIzLjYwMm0xMjAuNC0xOS4zNzZjMTMuODI1IDIuMTMyIDIwLjk1NyAxOS41MSAxMi42MiAzMC43NDktMTEuMjQ1IDE1LjE1OS0zNS4wNzQgOC4xNjQtMzUuNzY0LTEwLjQ5OS0uNDc1LTEyLjgxOSAxMC4yODUtMjIuMjM0IDIzLjE0NC0yMC4yNW0tMTU3LjEuNTY4YzcuOTU1LjUxNyAxMi44MjIgMi45NjcgMTYuMTY1IDguMTM0IDUuNTkgOC42NDIgMy4wMzEgMjEuNjcxLTUuMjI4IDI2LjYxLTMuOTA2IDIuMzM2LTguMTE2IDMuMDQ2LTE4LjEzNyAzLjA2bC0zLjQuMDA1di0xOS0xOWwzLjkuMDA0YzIuMTQ1LjAwMyA1LjE2LjA4NyA2LjcuMTg3TTI5LjIyMiA0Mi43bDQuMjM2IDEwLjEgNC4wNzIgOS43LTguNjAzLjA1MmMtNC43MzEuMDI5LTguNjcxLS4wMTYtOC43NTQtLjFzLjM5LTEuNDEyIDEuMDUyLTIuOTUybDIuMzEzLTUuNCAxLjM3Ni0zLjIgMS43OTMtNC4yYzIuMjMyLTUuMjYyIDIuMTI0LTUuMDM3IDIuMjQ0LTQuNy4wNTkuMTY1LjE4LjQ4LjI3MS43bTE0MS4wNzQgOC4ybDQuMzA2IDEwLjM1LjU1OSAxLjM1aC04LjgwMmMtNi45NiAwLTguNzgxLS4wNTItOC43MDQtLjI1LjA1NC0uMTM3IDEuMDU5LTIuNSAyLjIzNS01LjI1bDMuMjQzLTcuNiAxLjQ1My0zLjRjMS40NS0zLjMzNiAxLjg4NC00LjI5NiAxLjkyMS00LjI1MS4wMjMuMDI4IDEuNzI4IDQuMTAxIDMuNzg5IDkuMDUxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=">
+    </div>
+
+  <section class="intro">
+    <h1>Welcome to Amadeco Open Source</h1>
+    <p>
+      Founded by a Magento enthusiast and contributor since 2007, Amadeco believes in building not only elegant interiors, but also clean, performant, and open digital experiences.<br>
+      We share here our Magento 2 modules to support the developer community and accelerate innovation in e-commerce. All modules are free to use, production-ready, and designed with care.
+    </p>
+    <ol class="list-group list-group-flush">
+      <li class="list-group-item">Find us directly on our website <a href="https://www.amadeco.fr"><kbd>www.amadecofr</kbd></a></li>
+      <li class="list-group-item">CEO's GitHub: <a href="https://github.com/iparmentier"><kbd>https://github.com/iparmentier</kbd></a></li>
+      <li class="list-group-item">Company's GitHub: <a href="https://github.com/iparmentier"><kbd>https://github.com/maradam-sasu</kbd></a></li>
+    </ol>
+  </section>
+
+  <section class="project-grid container">
+    <h2 class="mb-4 text-center">Featured Magento 2 Modules</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-elasticsuite-stock" target="_blank">
+                Magento2 ElasticSuite Stock Filter
+              </a>
+            </h5>
+            <p class="card-text">
+              Enhance layered navigation with stock availability filters. Help customers find in-stock products faster.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-smile-custom-entity-seo" target="_blank">
+                Smile Custom Entity SEO
+              </a>
+            </h5>
+            <p class="card-text">
+              Adds SEO metadata (title, description, keywords, robots) to Smile Custom Entity in Magento 2.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-popular-search-terms" target="_blank">
+                Popular Search Terms & History
+              </a>
+            </h5>
+            <p class="card-text">
+              Boost conversions with a configurable module showing trending and personal search history with smart caching.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-quickview" target="_blank">
+                Magento2 QuickView
+              </a>
+            </h5>
+            <p class="card-text">
+              Quick product previews without reloading the page. Fully compatible with all product types, Magento 2.4.7 & PHP 8.3.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-sticky-cart" target="_blank">
+                Sticky Cart for Magento2
+              </a>
+            </h5>
+            <p class="card-text">
+              Adds a sticky Add to Cart bar that stays visible while scrolling. Designed to increase user engagement and conversions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="https://github.com/iparmentier/magento2-weee-configurable-products" target="_blank">
+                Weee for Configurable Products
+              </a>
+            </h5>
+            <p class="card-text">
+              Fixes Fixed Product Tax (FPT) calculation issues in Magento 2 by averaging tax across child products.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 <a href="https://www.amadeco.fr" target="_blank">Amadeco</a> — All rights reserved.
+  </footer>
+</body>
+</html>
